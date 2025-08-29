@@ -6,21 +6,23 @@ let history = document.querySelector("#history");
 let heartIconnum = 0;
 let coinIconnum = 100;
 
-let heartButton = document.querySelector("#heart-button");
+let heartButton = document.querySelectorAll("#heart-button");
 let coinButton = document.querySelector("#heart-button");
-navigator.clipboard.writeText()
-heartButton.addEventListener('click',()=>{
+heartButton.forEach(element => {
+  element.addEventListener('click',function(){
     heartIconnum++;
     heartIcon.innerHTML=heartIconnum;
+  });
 });
+
 
 
 
 // coinButton.addEventListener('click',copyTextToClipboard);
 
 
-let btnCopy = document.querySelector("#btn-copy");
-let btnCall = document.querySelector("#btn-call");
+let btnCopy = document.querySelectorAll("#btn-copy");
+let btnCall = document.querySelectorAll("#btn-call");
 
 function callClick(serviceName,serviceNumber){
   let serviceNamevar = document.querySelector(`#${serviceName}`);
@@ -56,9 +58,9 @@ function callClick(serviceName,serviceNumber){
     div.style.display = 'flex';
     div.style.alignItems ='center';
     div.style.justifyContent = 'space-between';
-    h1.className = " text-xl font-bold";
-    h11.className = " text-xl ";
-    h2.className = " text-xl ";
+    h1.className = " text-xl font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm text-[12px]";
+    h11.className = " text-xl 2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm text-[12px]";
+    h2.className = " text-xl 2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm text-[12px]";
     // h1.style.fontSize = '25px'
     history.appendChild(div);
     
@@ -68,11 +70,17 @@ function callClick(serviceName,serviceNumber){
   }
 }
 
+
+  
+
 let deleteClear = document.querySelector("#delete-clear");
 deleteClear.addEventListener('click',function(){
   console.log("delte");
   history.innerHTML = " ";
 });
+
+let copyTextA = document.querySelector("#copy-text");
+let copyTextval = 0;
 
 async function copyText(text){
   let textAll = document.querySelector(`#${text}`).innerHTML;
@@ -80,6 +88,8 @@ async function copyText(text){
     
     await navigator.clipboard.writeText(textAll);
     alert(`Number = ${textAll} Copied`);
+    copyTextval++;
+    copyTextA.innerHTML = copyTextval;
 
   }catch(err){
     alert(err);
