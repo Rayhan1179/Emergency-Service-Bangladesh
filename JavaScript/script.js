@@ -55,12 +55,13 @@ function callClick(serviceName,serviceNumber){
 
     div.appendChild(div2);
     div.appendChild(div3);
-    div.style.display = 'flex';
-    div.style.alignItems ='center';
-    div.style.justifyContent = 'space-between';
-    h1.className = " text-xl font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm text-[12px]";
-    h11.className = " text-xl 2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm text-[12px]";
-    h2.className = " text-xl 2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm text-[12px]";
+    
+  
+    
+    div.className = "2xl:flex 2xl:items-center 2xl:justify-between xl:flex xl:items-center xl:justify-between lg:flex lg:items-center lg:justify-between md:flex md:items-center md:justify-between sm:flex sm:items-center sm:justify-between flex-col items-center justify-between";
+    h1.className = "font-bold 2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm text-[5px]";
+    h11.className = "2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm text-[5px]";
+    h2.className = "2xl:text-2xl xl:text-xl lg:text-lg md:text-md sm:text-sm text-[5px]";
     // h1.style.fontSize = '25px'
     history.appendChild(div);
     
@@ -99,15 +100,3 @@ async function copyText(text){
 }
 
 
-// btnCall.addEventListener('click',()=>{
-//   if(coinIconnum <20){
-//     alert("You do not have sufficient money to call, please recharge.");
-//   }
-//   else if(coinIconnum>=20){
-//     alert("Dialing 999 means you are calling the national emergency number");
-//     coinIconnum = coinIconnum-20;
-//     console.log(coinIconnum);
-//     coinIcon.innerHTML = coinIconnum;
-    
-//   }
-// });
